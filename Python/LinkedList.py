@@ -108,14 +108,36 @@ class LinkedList:
         head.next = head.next.next
         self.length -= 1
 
+    #Functions Regarding Modification of the Linked List
+    def reverse(self):
+        current = self.head
+        prev = None
+        while current:
+            next = current.next
+            current.next = prev
+            prev = current
+            current = next
+        self.head = prev
+        
+           
+            
+           
+            
+
+
+
+
+def main():
+    ll = LinkedList()
+    ll.append(1)
+    ll.append(2)
+    ll.append(3)
+    ll.append(4)
+
+    ll.reverse()
+    ll.print()
+
 
 #driver function
 if __name__ == '__main__':
-
-    ll = LinkedList()
-    ll.append(1)
-    ll.append(4)
-    ll.append(1)
-    ll.append(12)
-    ll.removeAtIndex(0)
-    ll.print()
+    main()
