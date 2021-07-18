@@ -1,5 +1,4 @@
 package Java;
-
 class Node {
     Node next;
     int data;
