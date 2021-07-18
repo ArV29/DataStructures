@@ -78,9 +78,13 @@ class LinkedList:
 
         #Remove the last node from the list and returns it
     def pop(self):
+        if(self.length == 0):
+            print('Unable to remove Node. IndexOutOfBounds')
+            return
+
         head = self.head
         while head.next!=None:
-               head = head.next
+            head = head.next
         lastNode = head.next
         head.next = None
         self.length -= 1
