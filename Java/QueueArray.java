@@ -1,4 +1,3 @@
-package Java;
 class QueueArray{
   private int[] queue;
   private int rear, front;

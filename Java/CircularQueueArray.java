@@ -1,5 +1,3 @@
-package Java;
-
 class CircularQueueArray {
   private int[] queue;
   private int rear, front, currentSize;

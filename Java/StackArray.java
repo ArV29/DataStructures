@@ -1,5 +1,3 @@
-package Java;
-
 public class StackArray {
     int MAX;
     int top;
