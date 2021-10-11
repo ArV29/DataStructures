@@ -7,7 +7,6 @@ class Deque:
     self.maxSize = n
     self.currentSize = 0
 
-  
   def isFull(self):
     return self.currentSize == self.maxSize
   
@@ -19,7 +18,6 @@ class Deque:
     if self.isFull():
       print("OPERATION FAILED, DEQUE FULL")
       return
-    
     self.front = (self.front - 1)%self.maxSize
     self.deque[self.front] = data
     self.currentSize +=1
@@ -28,10 +26,10 @@ class Deque:
     if self.isFull():
       print("OPERATION FAILED, DEQUE FULL")
       return
-    
     self.rear = (self.rear + 1)%self.maxSize
     self.deque[self.rear] = data
     self.currentSize+=1
+  
   
   def removeRear(self):
     if self.isEmpty():
@@ -47,27 +45,24 @@ class Deque:
     if self.isEmpty():
       print("OPERATION FAILED, DEQUE EMPTY")
       return
-
     data = self.deque[self.front]
     self.deque[self.front] = 0
     self.front = (self.front + 1) % self.maxSize
     self.currentSize -=1
     return data
 
+  
   def peekFront(self):
     if self.isEmpty():
       print("OPERATION FAILED, DEQUE EMPTY")
       return
-    
     return self.deque[self.front]
 
   def peekRear(self):
     if self.isEmpty():
       print("OPERATION FAILED, DEQUE EMPTY")
       return
-
     return self.deque[self.rear]
-
 
 
 
@@ -87,9 +82,4 @@ def main():
   print(f"Get front element: {dq.peekFront()}")
   dq.removeFront()
   print(f"After delete front element new front become : {dq.peekFront()}")
-
-
-
-
-  
 main()

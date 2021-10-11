@@ -1,4 +1,4 @@
-class StackArray:
+class Stack:
 
 	def __init__(self, length):
 		self.MAX = length
@@ -18,7 +18,6 @@ class StackArray:
 
 		self.top += 1
 		self.stack[self.top] = data
-		print(data, "pushed to stack")
 
 	def pop(self):
 		if self.isEmpty():
@@ -27,7 +26,6 @@ class StackArray:
 
 		data = self.stack[self.top]
 		self.top -= 1
-		print(data, "popped from stack")
 		return data
 
 	def peek(self):
@@ -43,20 +41,4 @@ class StackArray:
 			return -1*self.MAX
 
 		print("Stack Has the following elements:\n", self.stack[0:self.top+1])
-
-
-def main():
-
-	stack1 = StackArray(100000)
-
-	print("Is the stack empty?\t", stack1.isEmpty())
-	stack1.push(10)
-	stack1.push(20)
-	stack1.pop()
-	print("Topmost element: ", stack1.peek())
-	print("Is the stack Full?\t", stack1.isFull())
-	stack1.pop()
-	print("Is the stack empty?\t", stack1.isEmpty())
-	print("Topmost element: " + (stack1.peek if stack1.peek() != -stack1.MAX else "NA"))
-
 

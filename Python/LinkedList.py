@@ -9,7 +9,7 @@ class LinkedList:
     def __init__(self):
         self.head = None
         self.length = 0
-    #Functions regarding accesing the value of the linked list
+    #Functions regarding accessing the value of the linked list
 
         #Print the whole list
     def print(self):
@@ -28,9 +28,17 @@ class LinkedList:
         while i < index:
             head = head.next
             i+=1
-        return head.next
+        return head
     
-    
+    def get(self, index = 0):
+        if index > self.length or index < 0:
+            print('Unable to get None. IndexOutOfBounds')
+        i = 0
+        head = self.head
+        while i < index:
+            head = head.next
+            i+=1
+        return head.data
     
     #Functions Regarding Addition Of A Node
 
@@ -60,14 +68,13 @@ class LinkedList:
             print('Unable to add Node. IndexOutOfBounds')
         i = 0
         head = self.head
-        
-        while i<index:
+        if index==0:
+            self.push(data)
+            return
+        while i<index-1:
             head = head.next
             i+=1
-        if head.next:
-            temp = head.next.next
-        else:
-            temp = None
+        temp = head.next
         head.next = Node(data)
         head.next.next = temp
         self.length += 1
@@ -135,11 +142,11 @@ def main():
     ll = LinkedList()
     ll.append(1)
     ll.append(2)
-    ll.append(3)
-    ll.append(4)
-
-    ll.reverse()
     ll.print()
+    ll.push(0)
+    ll.insertAtIndex(1, -1)
+    ll.print()
+    print(ll.get(3))
 
 
 #driver function
